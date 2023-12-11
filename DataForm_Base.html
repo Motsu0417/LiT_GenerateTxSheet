@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+    <style type="text/css">
+        input.input { 
+            border: 2px solid pink;
+            border-radius: 5px;
+        }
+        span.form_title_border{
+            color: pink;
+            font-size: 15px;
+            background-color: pink;
+            margin-right: 10px;
+        }
+        span.question{
+            font-size: 15px;
+        }
+        p.question{
+            margin: 10px;
+            font-size: 15px;
+        }
+
+        button{
+            color: #fff;
+            background-color: #f09d9d;
+            margin: 10px 0px;
+            font-size: 18px;
+            border: 1px solid;
+            border-radius: 20px;
+            padding: 5px 110px;
+            display: inline-block;
+            font-style: bold;
+            width: 100%;
+        }
+        span.explain{
+            color: grey;
+            font-size:13px;
+        }
+        span.hissu{
+            color:red;
+        }
+        
+
+    </style>
+</head>
+<form method="post">
+    <p class="question">
+            入力行：<?= rowNum ?><br>
+        <input class="input" type="hidden" name="rowNum" value="<?= rowNum ?>">
+        <input class="input" type="hidden" name="type" value="<?=type?>">
+    </p>
+    <p class="question">
+        プロジェクト名<span class="hissu">*</span><br>
+        <span class="explain">プロジェクト名（管理上の表記名）を入力してください<br>
+        これがタブ名/ファイル名になります。<br>
+        教材(MOZER)毎に設定してください</span><br>
+        <input class="input" type="text" name="projectName" placeholder="Base_UnityGame_01" required>
+    </p>
+    <p class="question">
+        主題名<span class="hissu">*</span><br>
+        <span class="explain">スライドのタイトルと同じ</span><br>
+        <input class="input" type="text" name="mainTitle" placeholder="ユニティゲーム" required>
+    </p>
+    <p class="question">
+        副題名<span class="hissu">*</span><br>
+        <span class="explain">スライドのサブタイトルと同じ</span><br>
+        <input class="input" type="text" size="40" name="subTitle" placeholder="プロジェクトを設定しよう" required>
+    </p>
+    <p class="question">
+        設計担当者名<span class="hissu">*</span><br>
+        <input class="input" type="text" name="designer" placeholder="メンター名" required>
+    </p>
+    <p class="question">
+        制作担当者名<span class="hissu">*</span><br>
+        <input class="input" type="text" name="producer" placeholder="メンター名" required>
+    </p>
+    <p class="question">
+        スキル内容<br>
+        <span class="explain">総合で学んでほしい内容(スキル一覧と合致の必要なし)</span><br>
+        <textarea class="input" name="skillText" rows="3" cols="70" placeholder=""></textarea>
+    </p>
+
+    <button onclick="google.script.run.inputBaseInfo(this.parentNode);">
+        作成 <span style="color:red;">►</span>
+    </button>
+</form>
+</body>
+
+</html>

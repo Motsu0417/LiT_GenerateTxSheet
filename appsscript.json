@@ -1,0 +1,17 @@
+{
+  "timeZone": "Asia/Tokyo",
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "sheets": {
+    "macros": [{
+      "menuName": "onOpen",
+      "functionName": "onOpen"
+    }, {
+      "menuName": "教材新規作成",
+      "functionName": "showinputForm"
+    }, {
+      "menuName": "教材削除",
+      "functionName": "deleteProject"
+    }]
+  }
+}

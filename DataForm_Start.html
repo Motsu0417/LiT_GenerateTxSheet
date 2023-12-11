@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+    <style type="text/css">
+        input.input { 
+            border: 2px solid pink;
+            border-radius: 5px;
+        }
+        span.form_title_border{
+            color: pink;
+            font-size: 15px;
+            background-color: pink;
+            margin-right: 10px;
+        }
+        span.question{
+            font-size: 15px;
+        }
+        p.question{
+            margin: 10px;
+            font-size: 15px;
+        }
+
+        button{
+            color: #fff;
+            background-color: #f09d9d;
+            margin: 10px 0px;
+            font-size: 18px;
+            border: 1px solid;
+            border-radius: 20px;
+            padding: 5px 110px;
+            display: inline-block;
+            font-style: bold;
+            width: 100%;
+        }
+        span.explain{
+            color: grey;
+        }
+        
+        span.hissu{
+            color:red;
+        }
+
+    </style>
+</head>
+<form method="post">
+    <h1>共通</h1>
+    <h2>入力必須項目 <span class="hissu">*</span></h2>
+    <p class="question">
+        入力する行番号<span class="hissu">*</span><br>
+        <span class="explain" required>設定した行に挿入されます</span><br>
+        <input class="input" type="number" name="rowNum" placeholder="1以上" value="" required>
+    </p>
+    
+    <p class="question">
+        プロジェクトタイプ<span class="hissu">*</span><br>
+        <span class="explain">BaseもしくはTipsを選択してください。<br>
+        Baseの場合は、最初の教科書なのか、02番以降なのか選択してください</span><br>
+        <input class="input" type="radio" name="projectType" value="Base_Root" required>Base 01番<br>
+        <input class="input" type="radio" name="projectType" value="Base_Section" required>Base 02番以降<br>
+        <input class="input" type="radio" name="projectType" value="Tips" required>Tips<br>
+    </p>
+    <button onclick="google.script.run.inputTxType(this.parentNode);">
+        次へ
+    </button>
+</form>
+</body>
+
+</html>
